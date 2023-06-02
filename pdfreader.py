@@ -13,7 +13,7 @@ import tempfile
 from langchain.document_loaders import TextLoader
 
 
-OPENAI_API_KEY = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 @st.cache_data
 def load_models():
