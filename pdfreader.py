@@ -16,7 +16,7 @@ from langchain.document_loaders import TextLoader
 
 @st.cache_data
 def load_models():
-    llm = OpenAI(open_api_key=st.secrets["OPENAI_API_KEY"], temperature=0)
+    llm = OpenAI(openai_api_key=st.secrets["OPENAI_API_KEY"], temperature=0)
     embeddings = OpenAIEmbeddings()
     qa_chain = load_qa_chain(llm, chain_type="stuff")
     summarize_chain = load_summarize_chain(llm, chain_type="map_reduce")
