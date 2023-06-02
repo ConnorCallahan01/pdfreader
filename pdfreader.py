@@ -12,7 +12,7 @@ import os
 import tempfile
 from langchain.document_loaders import TextLoader
 
-os.environ["OPENAI_API_KEY"] = "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"
+
 
 
 @st.cache_data
