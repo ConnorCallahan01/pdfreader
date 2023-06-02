@@ -13,10 +13,10 @@ import tempfile
 from langchain.document_loaders import TextLoader
 
 
-os.environ["OPENAI_API_KEY"] = "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"
 
 @st.cache_data
 def load_models():
+    os.environ["OPENAI_API_KEY"] = "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"
     llm = OpenAI(temperature=0)
     embeddings = OpenAIEmbeddings()
     qa_chain = load_qa_chain(llm, chain_type="stuff")
