@@ -12,12 +12,12 @@ import os
 import tempfile
 from langchain.document_loaders import TextLoader
 
-os.environ["OPENAI_API_KEY"]=st.secrets["OPENAI_API_KEY"]
+
 
 @st.cache_data
 def load_models():
-    llm = OpenAI(temperature=0)
-    embeddings = OpenAIEmbeddings()
+    llm = OpenAI(open_api_key=st.secrets["OPENAI_API_KEY"], temperature=0)
+    embeddings = OpenAIEmbeddings(open_api_key=st.secrets["OPENAI_API_KEY"])
     qa_chain = load_qa_chain(llm, chain_type="stuff")
     summarize_chain = load_summarize_chain(llm, chain_type="map_reduce")
     return llm, embeddings, qa_chain, summarize_chain
