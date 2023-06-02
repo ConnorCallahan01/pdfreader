@@ -15,7 +15,7 @@ from langchain.document_loaders import TextLoader
 os.environ["OPENAI_API_KEY"] = "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"
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def load_models():
     llm = OpenAI(temperature=0)
     embeddings = OpenAIEmbeddings()
